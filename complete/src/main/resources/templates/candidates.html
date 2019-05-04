@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<header th:insert="/menu :: header"> </header>
+<table>
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Name </th>
+            <th> Surname </th>
+            <th> Email </th>
+            <th> Phone </th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${candidates.empty}">
+            <td colspan="5"> No Candidates Available </td>
+        </tr>
+        <tr th:each="c : ${candidates}">
+            <td><span th:text="${c.id}"> Id </span></td>
+            <td><span th:text="${c.name}"> Name </span></td>
+            <td><span th:text="${c.surname}"> Surname </span></td>
+            <td><span th:text="${c.email}"> Email </span></td>
+            <td><span th:text="${c.phone}"> Phone </span></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
