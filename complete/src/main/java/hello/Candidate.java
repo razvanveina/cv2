@@ -72,4 +72,9 @@ public class Candidate {
     this.phone = phone;
   }
 
+  @Override
+  public String toString() {
+    return "Candidate [id=" + id + ", name=" + name + ", surname=" + surname + ", email=" + email + ", phone=" + phone + "]";
+  }
+
 }
