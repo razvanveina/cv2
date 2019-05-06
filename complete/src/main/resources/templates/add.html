@@ -49,6 +49,12 @@
                   </option>
               </select>            
             </div>
+
+          <div class="form-group">
+            <label for="testDate">Test date</label>
+            <input type="datetime-local" class="form-control" id="testDate" placeholder="Enter test date" name="testDate" th:field="*{testDate}" />
+          </div>
+
             
             <input type="submit" value="Submit" class="btn btn-primary"/>
             <input type="reset" value="Reset" class="btn btn-primary"/>
