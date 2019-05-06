@@ -1,13 +1,18 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>View candidates</title>
+  <div th:insert="/fragments :: includes"> </div>
+
 </head>
+<body>
 
 <body>
-<header th:insert="/menu :: header"> </header>
-<table>
+<header th:insert="/fragments :: menu"> </header>
+<div class="container">
+<table class="table table-striped">
     <thead>
         <tr>
             <th> Id </th>
@@ -23,12 +28,13 @@
         </tr>
         <tr th:each="c : ${candidates}">
             <td><span th:text="${c.id}"> Id </span></td>
-            <td><span th:text="${c.name}"> Name </span></td>
+            <td><A th:href="@{/demo/edit(id=${c.id})}"><span th:text="${c.name}"></span></A></td>
             <td><span th:text="${c.surname}"> Surname </span></td>
             <td><span th:text="${c.email}"> Email </span></td>
             <td><span th:text="${c.phone}"> Phone </span></td>
         </tr>
     </tbody>
 </table>
+</div>
 </body>
 </html>

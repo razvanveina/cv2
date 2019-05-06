@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path = "/demo") // This means URL's start with /demo (after Application path)
@@ -22,19 +23,25 @@ public class MainController {
     // @RequestParam means it is a parameter from the GET or POST request
     userRepository.save(candidate);
     model.addAttribute("candidates", userRepository.findAll());
-    return "candidates";
+    return "view";
+  }
+
+  @GetMapping(path = "/edit")
+  public String editCandidate(Model model, @RequestParam int id) {
+    model.addAttribute("candidate", userRepository.findById(id));
+    return "add";
   }
 
   @GetMapping("/add")
   public String addForm(Model model) {
-    model.addAttribute("candidate", new Candidate("1", "2", "3", "4"));
+    model.addAttribute("candidate", new Candidate());
     return "add";
   }
 
   @GetMapping(path = "/all")
   public String getAllCandidates(Model model) {
     model.addAttribute("candidates", userRepository.findAll());
-    return "candidates";
+    return "view";
   }
 
   @GetMapping(path = "")
@@ -42,9 +49,9 @@ public class MainController {
     return "index";
   }
 
-  @GetMapping("/menu")
-  public String getMenu() {
-    return "menu.html";
-  }
+  //  @GetMapping("/menu")
+  //  public String getMenu() {
+  //    return "menu.html";
+  //  }
 
 }
