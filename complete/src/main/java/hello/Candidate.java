@@ -1,6 +1,8 @@
 
 package hello;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,9 +22,40 @@ public class Candidate {
 
   private String phone;
 
+  private boolean eligibleForTest;
+
+  private CallOutcome testCallOutcome;
+
+  private String testCallOutcomeDetail;
+
+  private Date testDate;
+
+  private boolean eligibleForInterview;
+
+  private CallOutcome interviewCallOutcome;
+
+  private String interviewCallOutcomeDetail;
+
+  private Date interviewDate;
+
+  private String details;
+
+  private double hrGrade;
+
+  private double testGrade;
+
+  private double interviewGrade;
+
+  private String schoolInfo;
+
+  private int schoolYear;
+
+  private int maxSchoolYear;
+
+  private String cvFileName;
+
   public Candidate() {
     super();
-    // TODO Auto-generated constructor stub
   }
 
   public Candidate(String name, String surname, String email, String phone) {
@@ -72,9 +105,155 @@ public class Candidate {
     this.phone = phone;
   }
 
+  public boolean isEligibleForTest() {
+    return eligibleForTest;
+  }
+
+  public void setEligibleForTest(boolean eligibleForTest) {
+    this.eligibleForTest = eligibleForTest;
+  }
+
+  public CallOutcome getTestCallOutcome() {
+    return testCallOutcome;
+  }
+
+  public void setTestCallOutcome(CallOutcome testCallOutcome) {
+    this.testCallOutcome = testCallOutcome;
+  }
+
+  public Date getTestDate() {
+    return testDate;
+  }
+
+  public void setTestDate(Date testDate) {
+    this.testDate = testDate;
+  }
+
+  public boolean isEligibleForInterview() {
+    return eligibleForInterview;
+  }
+
+  public void setEligibleForInterview(boolean eligibleForInterview) {
+    this.eligibleForInterview = eligibleForInterview;
+  }
+
+  public CallOutcome getInterviewCallOutcome() {
+    return interviewCallOutcome;
+  }
+
+  public void setInterviewCallOutcome(CallOutcome interviewCallOutcome) {
+    this.interviewCallOutcome = interviewCallOutcome;
+  }
+
+  public Date getInterviewDate() {
+    return interviewDate;
+  }
+
+  public void setInterviewDate(Date interviewDate) {
+    this.interviewDate = interviewDate;
+  }
+
+  public String getDetails() {
+    return details;
+  }
+
+  public void setDetails(String details) {
+    this.details = details;
+  }
+
+  public double getHrGrade() {
+    return hrGrade;
+  }
+
+  public void setHrGrade(double hrGrade) {
+    this.hrGrade = hrGrade;
+  }
+
+  public double getTestGrade() {
+    return testGrade;
+  }
+
+  public void setTestGrade(double testGrade) {
+    this.testGrade = testGrade;
+  }
+
+  public double getInterviewGrade() {
+    return interviewGrade;
+  }
+
+  public void setInterviewGrade(double interviewGrade) {
+    this.interviewGrade = interviewGrade;
+  }
+
+  public String getSchoolInfo() {
+    return schoolInfo;
+  }
+
+  public void setSchoolInfo(String schoolInfo) {
+    this.schoolInfo = schoolInfo;
+  }
+
+  public int getSchoolYear() {
+    return schoolYear;
+  }
+
+  public void setSchoolYear(int schoolYear) {
+    this.schoolYear = schoolYear;
+  }
+
+  public int getMaxSchoolYear() {
+    return maxSchoolYear;
+  }
+
+  public void setMaxSchoolYear(int maxSchoolYear) {
+    this.maxSchoolYear = maxSchoolYear;
+  }
+
   @Override
   public String toString() {
     return "Candidate [id=" + id + ", name=" + name + ", surname=" + surname + ", email=" + email + ", phone=" + phone + "]";
+  }
+
+  /**
+   * @return the cvFileName
+   */
+  public String getCvFileName() {
+    return cvFileName;
+  }
+
+  /**
+   * @param cvFileName the cvFileName to set
+   */
+  public void setCvFileName(String cvFileName) {
+    this.cvFileName = cvFileName;
+  }
+
+  /**
+   * @return the testCallOutcomeDetail
+   */
+  public String getTestCallOutcomeDetail() {
+    return testCallOutcomeDetail;
+  }
+
+  /**
+   * @param testCallOutcomeDetail the testCallOutcomeDetail to set
+   */
+  public void setTestCallOutcomeDetail(String testCallOutcomeDetail) {
+    this.testCallOutcomeDetail = testCallOutcomeDetail;
+  }
+
+  /**
+   * @return the interviewCallOutcomeDetail
+   */
+  public String getInterviewCallOutcomeDetail() {
+    return interviewCallOutcomeDetail;
+  }
+
+  /**
+   * @param interviewCallOutcomeDetail the interviewCallOutcomeDetail to set
+   */
+  public void setInterviewCallOutcomeDetail(String interviewCallOutcomeDetail) {
+    this.interviewCallOutcomeDetail = interviewCallOutcomeDetail;
   }
 
 }

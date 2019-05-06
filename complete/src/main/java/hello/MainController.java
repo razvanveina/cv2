@@ -32,7 +32,6 @@ public class MainController {
   @GetMapping(path = "/edit")
   public String editCandidate(Model model, @RequestParam int id) {
     Optional<Candidate> findById = userRepository.findById(id);
-    logger.info("id = " + findById.get().getId());
     model.addAttribute("candidate", findById);
     return "add";
   }

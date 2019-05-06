@@ -20,6 +20,8 @@
             <th> Surname </th>
             <th> Email </th>
             <th> Phone </th>
+            <th>El. Test</th>
+            <th>Call test</th>
         </tr>
     </thead>
     <tbody>
@@ -32,6 +34,8 @@
             <td><span th:text="${c.surname}"> Surname </span></td>
             <td><span th:text="${c.email}"> Email </span></td>
             <td><span th:text="${c.phone}"> Phone </span></td>
+            <td><span th:if="${c.eligibleForTest}"><i class="fa fa-check" style="font-size:26px;color:green;"></i></span></td>
+            <td><span th:text="${c.testCallOutcome}"></span></td>
         </tr>
     </tbody>
 </table>
