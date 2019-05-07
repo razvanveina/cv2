@@ -23,9 +23,11 @@
             <th>TE</th>
             <th>TC</th>
             <th>TD</th>
+            <th>TP</th>
             <th>IE</th>
             <th>IC</th>
             <th>ID</th>
+            <th>IP</th>
             <th>Comments</th>
         </tr>
     </thead>
@@ -43,10 +45,12 @@
             <td><span th:if="${c.eligibleForTest}"><i class="fa fa-check" style="font-size:26px;color:green;"></i></span></td>
             <td><span th:text="${c.testCallOutcome}"></span></td>
             <td><span th:text="${#dates.format(c.testDate, 'dd.MM.yyyy HH:mm')}"></span></td>
+            <td><span th:if="${c.presentAtTest}"><i class="fa fa-check" style="font-size:26px;color:green;"></i></span></td>
             
             <td><span th:if="${c.eligibleForInterview}"><i class="fa fa-check" style="font-size:26px;color:green;"></i></span></td>
             <td><span th:text="${c.interviewCallOutcome}"></span></td>
             <td><span th:text="${#dates.format(c.interviewDate, 'dd.MM.yyyy HH:mm')}"></span></td>
+            <td><span th:if="${c.presentAtInterview}"><i class="fa fa-check" style="font-size:26px;color:green;"></i></span></td>
             
             <td><span th:text="${c.details}"></span></td>
         </tr>

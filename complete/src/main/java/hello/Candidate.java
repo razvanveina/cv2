@@ -28,12 +28,16 @@ public class Candidate {
 
   private CallOutcome testCallOutcome;
 
+  private boolean presentAtTest;
+
   @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
   private Date testDate;
 
   private boolean eligibleForInterview;
 
   private CallOutcome interviewCallOutcome;
+
+  private boolean presentAtInterview;
 
   @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
   private Date interviewDate;
@@ -220,6 +224,34 @@ public class Candidate {
 
   public void setCvFileName(String cvFileName) {
     this.cvFileName = cvFileName;
+  }
+
+  /**
+   * @return the presentAtTest
+   */
+  public boolean isPresentAtTest() {
+    return presentAtTest;
+  }
+
+  /**
+   * @param presentAtTest the presentAtTest to set
+   */
+  public void setPresentAtTest(boolean presentAtTest) {
+    this.presentAtTest = presentAtTest;
+  }
+
+  /**
+   * @return the presentAtInterview
+   */
+  public boolean isPresentAtInterview() {
+    return presentAtInterview;
+  }
+
+  /**
+   * @param presentAtInterview the presentAtInterview to set
+   */
+  public void setPresentAtInterview(boolean presentAtInterview) {
+    this.presentAtInterview = presentAtInterview;
   }
 
 }
