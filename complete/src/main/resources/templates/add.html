@@ -33,36 +33,55 @@
             <label for="phone">Phone</label>
             <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone" th:field="*{phone}" required />
           </div>
+
           <div class="form-check mb-2 mr-sm-2">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="eligibleForTest" name="eligibleForTest" th:field="*{eligibleForTest}" >Eligible for test
-              </label>
-            </div>          
-            
-            <div class="form-group">
-              <label for="testCallOutcome">Test call outcome</label>
-              <select class="form-control" id="testCallOutcome" name="testCallOutcome" th:field="*{testCallOutcome}" >
-                  <option selected value="" > -- select an option -- </option>
-                  <option th:each="value : ${T(hello.CallOutcome).values()}"
-                          th:value="${value}"
-                          th:text="${value}">
-                  </option>
-              </select>            
-            </div>
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" id="eligibleForTest" name="eligibleForTest" th:field="*{eligibleForTest}">Eligible for test
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="testCallOutcome">Test call outcome</label>
+            <select class="form-control" id="testCallOutcome" name="testCallOutcome" th:field="*{testCallOutcome}">
+              <option selected value=""> -- select an option -- </option>
+              <option th:each="value : ${T(hello.CallOutcome).values()}" th:value="${value}" th:text="${value}">
+              </option>
+            </select>
+          </div>
 
           <div class="form-group">
             <label for="testDate">Test date</label>
             <input type="datetime-local" class="form-control" id="testDate" placeholder="Enter test date" name="testDate" th:field="*{testDate}" />
           </div>
 
-          <div class="form-group">
-            <label for="phone">Details</label>
-            <textarea class="form-control" id="details" placeholder="Enter details" name="details" th:field="*{details}" rows="3" />
+          <div class="form-check mb-2 mr-sm-2">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" id="eligibleForInterview" name="eligibleForInterview" th:field="*{eligibleForInterview}">Eligible for interview
+            </label>
           </div>
 
-            
-            <input type="submit" value="Submit" class="btn btn-primary"/>
-            <input type="reset" value="Reset" class="btn btn-primary"/>
+          <div class="form-group">
+            <label for="interviewCallOutcome">Interview call outcome</label>
+            <select class="form-control" id="interviewCallOutcome" name="interviewCallOutcome" th:field="*{interviewCallOutcome}">
+              <option selected value=""> -- select an option -- </option>
+              <option th:each="value : ${T(hello.CallOutcome).values()}" th:value="${value}" th:text="${value}">
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="testDate">Interview date</label>
+            <input type="datetime-local" class="form-control" id="interviewDate" placeholder="Enter interview date" name="interviewDate" th:field="*{interviewDate}" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Comments</label>
+            <textarea class="form-control" id="details" placeholder="Enter comments" name="details" th:field="*{details}" rows="3" />
+          </div>
+
+
+          <input type="submit" value="Submit" class="btn btn-primary" />
+          <input type="reset" value="Reset" class="btn btn-primary" />
         </form>
       </div>
       <div class="col"></div>

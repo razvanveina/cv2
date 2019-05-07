@@ -35,6 +35,7 @@ public class Candidate {
 
   private CallOutcome interviewCallOutcome;
 
+  @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
   private Date interviewDate;
 
   private String details;
@@ -213,46 +214,12 @@ public class Candidate {
     return "Candidate [id=" + id + ", name=" + name + ", surname=" + surname + ", email=" + email + ", phone=" + phone + "]";
   }
 
-  /**
-   * @return the cvFileName
-   */
   public String getCvFileName() {
     return cvFileName;
   }
 
-  /**
-   * @param cvFileName the cvFileName to set
-   */
   public void setCvFileName(String cvFileName) {
     this.cvFileName = cvFileName;
-  }
-
-  /**
-   * @return the testCallOutcomeDetail
-   */
-  public String getTestCallOutcomeDetail() {
-    return testCallOutcomeDetail;
-  }
-
-  /**
-   * @param testCallOutcomeDetail the testCallOutcomeDetail to set
-   */
-  public void setTestCallOutcomeDetail(String testCallOutcomeDetail) {
-    this.testCallOutcomeDetail = testCallOutcomeDetail;
-  }
-
-  /**
-   * @return the interviewCallOutcomeDetail
-   */
-  public String getInterviewCallOutcomeDetail() {
-    return interviewCallOutcomeDetail;
-  }
-
-  /**
-   * @param interviewCallOutcomeDetail the interviewCallOutcomeDetail to set
-   */
-  public void setInterviewCallOutcomeDetail(String interviewCallOutcomeDetail) {
-    this.interviewCallOutcomeDetail = interviewCallOutcomeDetail;
   }
 
 }
