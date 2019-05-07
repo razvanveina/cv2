@@ -38,8 +38,8 @@
             <td><span th:text="${c.phone}"> Phone </span></td>
             <td><span th:if="${c.eligibleForTest}"><i class="fa fa-check" style="font-size:26px;color:green;"></i></span></td>
             <td><span th:text="${c.testCallOutcome}"></span></td>
-            <td><span th:date="${c.testDate}"></span></td>
-            <td><span th:text="${c.testCallOutcomeDetail}"></span></td>
+            <td><span th:text="${#dates.format(c.testDate, 'dd.MM.yyyy HH:mm')}"></span></td>
+            <td><span th:text="${c.details}"></span></td>
         </tr>
     </tbody>
 </table>

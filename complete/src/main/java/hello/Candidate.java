@@ -28,16 +28,12 @@ public class Candidate {
 
   private CallOutcome testCallOutcome;
 
-  private String testCallOutcomeDetail;
-
   @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
   private Date testDate;
 
   private boolean eligibleForInterview;
 
   private CallOutcome interviewCallOutcome;
-
-  private String interviewCallOutcomeDetail;
 
   private Date interviewDate;
 
