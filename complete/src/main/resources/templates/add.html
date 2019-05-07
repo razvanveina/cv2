@@ -91,6 +91,35 @@
             <textarea class="form-control" id="details" placeholder="Enter comments" name="details" th:field="*{details}" rows="3" />
           </div>
 
+          <div class="form-group">
+            <label for="testGrade">Test grade</label>
+            <input type="number" step="0.01" class="form-control" id="testGrade" placeholder="Enter test grade" name="testGrade" th:field="*{testGrade}"  />
+          </div>
+
+          <div class="form-group">
+            <label for="hrGrade">HR grade</label>
+            <input type="number" step="0.01" class="form-control" id="hrGrade" placeholder="Enter HR grade" name="hrGrade" th:field="*{hrGrade}"  />
+          </div>
+
+          <div class="form-group">
+            <label for="interviewGrade">Interview grade</label>
+            <input type="number" step="0.01" class="form-control" id="interviewGrade" placeholder="Enter interview grade" name="interviewGrade" th:field="*{interviewGrade}"  />
+          </div>
+
+          <div class="form-group">
+            <label for="schoolInfo">School info</label>
+            <input type="text" class="form-control" id="schoolInfo" placeholder="Enter school info" name="schoolInfo" th:field="*{schoolInfo}"  />
+          </div>
+
+          <div class="form-group">
+            <label for="schoolYear">School year</label>
+            <input type="number" step="1" class="form-control" id="schoolYear" placeholder="Enter school year" name="schoolYear" th:field="*{schoolYear}"  />
+          </div>
+
+          <div class="form-group">
+            <label for="maxSchoolYear">Max school year</label>
+            <input type="number" step="1" class="form-control" id="maxSchoolYear" placeholder="Enter max school year" name="maxSchoolYear" th:field="*{maxSchoolYear}"  />
+          </div>
 
           <input type="submit" value="Submit" class="btn btn-primary" />
           <input type="reset" value="Reset" class="btn btn-primary" />
