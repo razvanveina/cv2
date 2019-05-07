@@ -20,23 +20,15 @@
             <th> Surname </th>
             <th> Email </th>
             <th> Phone </th>
-            <th colspan="4">Test</th>
+            <th>TE</th>
+            <th>TC</th>
+            <th>TD</th>
+            <th>TComm</th>
         </tr>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th>Elg</th>
-            <th>Call</th>
-            <th>Date</th>
-            <th>Details</th>
-        </tr>        
     </thead>
     <tbody>
     <tr th:if="${candidates.empty}">
-            <td colspan="5"> No Candidates Available </td>
+            <td colspan="9"> No Candidates Available </td>
         </tr>
         <tr th:each="c : ${candidates}">
             <td><span th:text="${c.id}"> Id </span></td>
@@ -47,6 +39,7 @@
             <td><span th:if="${c.eligibleForTest}"><i class="fa fa-check" style="font-size:26px;color:green;"></i></span></td>
             <td><span th:text="${c.testCallOutcome}"></span></td>
             <td><span th:date="${c.testDate}"></span></td>
+            <td><span th:text="${c.testCallOutcomeDetail}"></span></td>
         </tr>
     </tbody>
 </table>

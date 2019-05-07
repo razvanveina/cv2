@@ -30,6 +30,7 @@ public class Candidate {
 
   private String testCallOutcomeDetail;
 
+  @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
   private Date testDate;
 
   private boolean eligibleForInterview;
