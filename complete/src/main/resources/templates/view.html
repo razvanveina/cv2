@@ -40,11 +40,13 @@
             <th>MxYr</th>
             
             <th>Comments</th>
+            
+            <th>Created</th>
         </tr>
     </thead>
     <tbody>
     <tr th:if="${candidates.empty}">
-            <td colspan="9"> No Candidates Available </td>
+            <td colspan="15"> No Candidates Available </td>
         </tr>
         <tr th:each="c : ${candidates}">
             <td><span th:text="${c.id}"> Id </span></td>
@@ -74,6 +76,9 @@
             <td><span th:text="${c.maxSchoolYear}"> Max school year</span></td>
             
             <td><span th:text="${c.details}"></span></td>
+            
+            <td><span th:text="${#dates.format(c.createdOn, 'dd.MM.yyyy HH:mm')}"></span></td>
+            
         </tr>
     </tbody>
 </table>

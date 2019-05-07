@@ -30,6 +30,8 @@ public class Candidate {
 
   private boolean presentAtTest;
 
+  private Date createdOn;
+
   @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
   private Date testDate;
 
@@ -60,6 +62,7 @@ public class Candidate {
 
   public Candidate() {
     super();
+    this.createdOn = new Date();
   }
 
   public Candidate(String name, String surname, String email, String phone) {
@@ -252,6 +255,20 @@ public class Candidate {
    */
   public void setPresentAtInterview(boolean presentAtInterview) {
     this.presentAtInterview = presentAtInterview;
+  }
+
+  /**
+   * @return the createdOn
+   */
+  public Date getCreatedOn() {
+    return createdOn;
+  }
+
+  /**
+   * @param createdOn the createdOn to set
+   */
+  public void setCreatedOn(Date createdOn) {
+    this.createdOn = createdOn;
   }
 
 }
