@@ -60,6 +60,8 @@ public class Candidate {
 
   private String cvFileName;
 
+  private String resolution;
+
   public Candidate() {
     super();
     this.createdOn = new Date();
@@ -269,6 +271,20 @@ public class Candidate {
    */
   public void setCreatedOn(Date createdOn) {
     this.createdOn = createdOn;
+  }
+
+  /**
+   * @return the resolution
+   */
+  public String getResolution() {
+    return resolution;
+  }
+
+  /**
+   * @param resolution the resolution to set
+   */
+  public void setResolution(String resolution) {
+    this.resolution = resolution;
   }
 
 }

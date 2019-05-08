@@ -12,6 +12,7 @@
 <body>
 <header th:insert="/fragments :: menu"> </header>
 <div class="container">
+<div class="table-responsive">
 <table class="table table-striped table-sm table-hover">
     <thead>
         <tr>
@@ -20,24 +21,24 @@
             <th> Surname </th>
             <th> Email </th>
             <th> Phone </th>
-            <th>TE</th>
-            <th>TC</th>
-            <th>TD</th>
-            <th>TP</th>
+            <th title="Eligible for test">TE</th>
+            <th title="Called for test">TC</th>
+            <th title="Test date">TD</th>
+            <th title="Present at test">TP</th>
             
-            <th>IE</th>
-            <th>IC</th>
-            <th>ID</th>
-            <th>IP</th>
+            <th title="Eligible for interview">IE</th>
+            <th title="Called for interview">IC</th>
+            <th title="Interview date">ID</th>
+            <th title="Present at interview">IP</th>
             
-            <th>GT</th>
-            <th>GHR</th>
-            <th>GI</th>
-            <th>AVG</th>
+            <th title="Test grade">GT</th>
+            <th title="HR grade">GHR</th>
+            <th title="Interview grade">GI</th>
+            <th title="Overall grade">AVG</th>
             
-            <th>Sch</th>
-            <th>Yr</th>
-            <th>MxYr</th>
+            <th title="School">Sch</th>
+            <th title="School year">Yr</th>
+            <th title="School max year">MxYr</th>
             
             <th>Comments</th>
             
@@ -65,15 +66,15 @@
             <td><span th:text="${#dates.format(c.interviewDate, 'dd.MM.yyyy HH:mm')}"></span></td>
             <td><span th:if="${c.presentAtInterview}"><i class="fa fa-check" style="font-size:26px;color:green;"></i></span></td>
             
-            <td><span th:text="${#numbers.formatDecimal(c.testGrade, 0, 'COMMA', 2, 'POINT')}"> Test grade </span></td>
-            <td><span th:text="${#numbers.formatDecimal(c.hrGrade, 0, 'COMMA', 2, 'POINT')}"> HR grade </span></td>
-            <td><strong><span th:text="${#numbers.formatDecimal(c.interviewGrade, 0, 'COMMA', 2, 'POINT')}"> Interview grade </span></strong></td>
+            <td><span th:if="${c.testGrade > 0}"th:text="${#numbers.formatDecimal(c.testGrade, 0, 'COMMA', 2, 'POINT')}"> Test grade </span></td>
+            <td><span th:if="${c.hrGrade > 0}"th:text="${#numbers.formatDecimal(c.hrGrade, 0, 'COMMA', 2, 'POINT')}"> HR grade </span></td>
+            <td><strong><span th:if="${c.interviewGrade > 0}"th:text="${#numbers.formatDecimal(c.interviewGrade, 0, 'COMMA', 2, 'POINT')}"> Interview grade </span></strong></td>
 
-            <td><strong><span th:text="${#numbers.formatDecimal((c.interviewGrade+c.hrGrade+c.testGrade)/3, 0, 'COMMA', 2, 'POINT')}"> AVG </span></strong></td>
+            <td><strong><span th:if="${(c.interviewGrade+c.hrGrade+c.testGrade)/3 > 0}"th:text="${#numbers.formatDecimal((c.interviewGrade+c.hrGrade+c.testGrade)/3, 0, 'COMMA', 2, 'POINT')}"> AVG </span></strong></td>
 
             <td><span th:text="${c.schoolInfo}"> School </span></td>
-            <td><span th:text="${c.schoolYear}"> School year</span></td>
-            <td><span th:text="${c.maxSchoolYear}"> Max school year</span></td>
+            <td><span th:if="${c.schoolYear > 0}" th:text="${c.schoolYear}"> School year</span></td>
+            <td><span th:if="${c.maxSchoolYear > 0}" th:text="${c.maxSchoolYear}"> Max school year</span></td>
             
             <td><span th:text="${c.details}"></span></td>
             
@@ -82,6 +83,7 @@
         </tr>
     </tbody>
 </table>
+</div>
 </div>
 </body>
 </html>
